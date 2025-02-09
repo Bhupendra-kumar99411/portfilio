@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
   //sticky header
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 1) {
-        $(".header-area").addClass("sticky");
-      } else {
-        $(".header-area").removeClass("sticky");
-      }
+    // $(window).scroll(function() {
+    //   if ($(this).scrollTop() > 1) {
+    //     $(".header-area").addClass("sticky");
+    //   } else {
+    //     $(".header-area").removeClass("sticky");
+    //   }
+    document.querySelector(".menu_icon").addEventListener("click", function() {
+      document.querySelector(".navbar").classList.toggle("active");
+  });  
   
       // Update the active section in the header
       updateActiveSection();
@@ -80,9 +83,8 @@ $(document).ready(function() {
               form.reset()
           })
           .catch(error => console.error('Error!', error.message))
-  })
-    
   });
+    
   
   function updateActiveSection() {
     var scrollPosition = $(window).scrollTop();
